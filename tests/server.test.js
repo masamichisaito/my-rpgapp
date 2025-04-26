@@ -3,8 +3,9 @@ const request = require('supertest');
 const app = require('../app');
 
 describe('Server Initialization', () => {
-  it('should respond to GET / with status 200', async () => {
+  it('should redirect GET / to /rpg/start', async () => {
     const res = await request(app).get('/');
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toBe(302);
+    expect(res.headers.location).toBe('/rpg/start');
   });
 });

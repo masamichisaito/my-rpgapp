@@ -4,14 +4,14 @@ const express = require('express');
 // Expressアプリケーションのインスタンスを作成
 const app = express();
 
-// サーバーが待ち受けるポート番号（http://localhost:3000）
-const PORT = 3000;
+// サーバーが待ち受けるポート番号（http://localhost:3001）
+const PORT = 3001;
 
 // "public"フォルダの中身を、静的ファイルとして公開する設定
 // 例：publicフォルダ内の画像やCSS、JSがそのままアクセス可能になる
 app.use(express.static('public'));
 
-// ルートURL（http://localhost:3000/）にアクセスがあったとき、index.htmlを返す
+// ルートURL（http://localhost:3001/）にアクセスがあったとき、index.htmlを返す
 app.get('/', (req, res) => {
   // __dirnameはこのファイル（index.js）のあるディレクトリを指す
   res.sendFile(__dirname + '/public/index.html');
