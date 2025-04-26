@@ -1,11 +1,11 @@
 const request = require('supertest');
 const app = require('../app'); // Express アプリケーションのインスタンス
 
-describe('GET /rpg/start', () => {
-  it('should return 200 OK and render the start page', async () => {
-    const res = await request(app).get('/rpg/start');
-    expect(res.statusCode).toBe(200);
-    expect(res.text).toContain('RPG開始'); // start.ejs に含まれるテキストを確認
+describe('Server Initialization', () => {
+  it('should redirect GET / to /rpg/start', async () => {
+    const res = await request(app).get('/');
+    expect(res.statusCode).toBe(302);
+    expect(res.headers.location).toBe('/rpg/start');
   });
 });
 

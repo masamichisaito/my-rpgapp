@@ -1,7 +1,7 @@
 describe('RPGバトル機能のE2Eテスト', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.contains('RPGを遊ぶ').should('exist').click();
+    cy.visit('/rpg/start');
+    cy.contains('▶︎ 新しい冒険が始まる…')
     cy.url().should('include', '/rpg/start');
   });
 
