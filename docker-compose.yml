@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.web
     ports:
-      - "3000:3000"
+      - "3001:3001"
     networks:
       - default
 
@@ -19,8 +19,8 @@ services:
     networks:
       - default
     environment:
-      - CYPRESS_baseUrl=http://web:3000   # ←これ！！！超重要！！！！
-    entrypoint: ["npx", "cypress", "run", "--config", "baseUrl=http://web:3000"]
+      - CYPRESS_baseUrl=http://web:3001   # ←これ！！！超重要！！！！
+    entrypoint: ["npx", "cypress", "run", "--config", "baseUrl=http://web:3001"]
 
 networks:
   default:
